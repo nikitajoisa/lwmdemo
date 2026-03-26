@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeisureWorld Cork — For Every Body, For Everybody</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     TOPBAR
+     ══════════════════════════════════════════════════════ -->
+<div class="topbar">
+  🏊 Pools open Monday - Sunday
+  <span class="topbar-sep">·</span>
+  📍 Bishopstown · Churchfield · Douglas
+  <span class="topbar-sep">·</span>
+  <a href="#join"> Start Today!! →</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════════════════ -->
+<nav>
+  <div class="wrap nav-inner">
+
+    <a href="#" class="nav-logo">
+      <img src="/Users/nikitajoisa/Desktop/lwm/LW/Images/Logo.png" alt="LeisureWorld Cork"/>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#activities">Accessibity</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#classes">Classes</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#locations" class="btn btn-outline-white">Find a Centre</a>
+      <a href="#join" class="btn btn-orange">Join Now</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile slide-down menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#classes">Classes</a></li>
+  </ul>
+  <div class="mobile-menu-btns">
+    <a href="#locations" class="btn btn-outline-white">Find a Centre</a>
+    <a href="#join" class="btn btn-orange">Join Now</a>
+  </div>
+</div>
+
+<script>
+  const btn  = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Close menu when any link is tapped
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+      menu.setAttribute('aria-hidden', true);
+    });
+  });
+</script>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Cork's home of fitness &amp; fun</div>
+      <h1>For Every Body,<br><em>For Everybody.</em></h1>
+      <p>Health, fitness, and recreation made accessible for everyone — from first-timers to seasoned athletes, every age, every ability.</p>
+      <div class="hero-cta">
+        <a href="#join" class="btn btn-orange btn-lg">Join Now</a>
+        <a href="#activities" class="btn btn-outline-white btn-lg">Explore Membership Prices</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">12,000+</span>
+          <span class="stat-label">Members</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <span class="stat-num">3</span>
+          <span class="stat-label">Cork Centres</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Weekly Classes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ACTIVITIES
+     ══════════════════════════════════════════════════════ -->
+<section class="activities" id="activities">
+  <div class="wrap">
+    <div class="overline">What we offer</div>
+    <h2 class="display">Fitness, swimming, and activities<br>designed for <em>every body</em></h2>
+
+    <div class="act-grid">
+
+      <!-- Tall card: spans 2 rows on desktop -->
+      <a href="#" class="act-card span-2-rows">
+        <div class="card-bg bg-gym"></div>
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-tag">Gym</span>
+          <h3>Fully Equipped<br>Gym Floors</h3>
+          <p>State-of-the-art cardio, strength equipment and free weights at two centres.</p>
+          <span class="card-link">Find out more →</span>
+        </div>
+      </a>
+
+      <a href="#" class="act-card">
+        <div class="card-bg bg-pool"></div>
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-tag">Swimming</span>
+          <h3>Heated Pools</h3>
+          <p>25m heated pools for lane swimming, aqua fitness, and lessons for all ages.</p>
+          <span class="card-link">Find out more →</span>
+        </div>
+      </a>
+
+      <a href="#membership" class="act-card">
+        <div class="card-bg bg-classes"></div>
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-tag">Classes</span>
+          <h3>Group Fitness Classes</h3>
+          <p>Revelate, Ageless Movement, Movewell and more with our expert instructors.</p>
+          <span class="card-link">See timetable →</span>
+        </div>
+      </a>
+
+      <!-- Wide card: spans 2 columns on desktop/tablet -->
+      <a href="#" class="act-card span-2-cols">
+        <div class="card-bg bg-family"></div>
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-tag">Family &amp; Kids</span>
+          <h3>The Whole Family is Welcome</h3>
+          <p>Family swim sessions, after-school clubs, and holiday camps — something for everyone.</p>
+          <span class="card-link">Find out more →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LOCATIONS
+     ══════════════════════════════════════════════════════ -->
+<section class="locations" id="locations">
+  <div class="wrap">
+    <div class="section-head-row">
+      <div>
+        <div class="overline">Find us</div>
+        <h2 class="display">Three centres.<br>One community.</h2>
+      </div>
+      <p class="section-aside">One membership unlocks all three Cork centres — train wherever is closest to you.</p>
+    </div>
+
+    <div class="loc-grid">
+
+      <div class="loc-card">
+        <div class="loc-photo lp-bishopstown">
+          <div class="loc-photo-overlay"></div>
+          <div class="loc-photo-label">
+            <small>Flagship Centre</small>
+            <h3>Bishopstown</h3>
+          </div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-chips">
+            <span class="chip">🏋️ Gym</span>
+            <span class="chip">🏊 Pool</span>
+            <span class="chip">🧘 Classes</span>
+            <span class="chip">⚽ Astro Pitches</span>
+          </div>
+          <p>Our largest facility — full gym floor, 25m pool,18m pool, group fitness studios, and 4 Astro Pitches.</p>
+          <div class="loc-hours"><span class="dot-green"></span> Mon–Fri 7:00am–8:45pm · Sat–Sun 9am–5:45pm</div>
+          <div class="loc-btns">
+            <a href="#" class="btn btn-blue">Get Directions</a>
+            <a href="#join" class="btn btn-outline-ink">Join Here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-photo lp-churchfield">
+          <div class="loc-photo-overlay"></div>
+          <div class="loc-photo-label">
+            <small>North Cork</small>
+            <h3>Churchfield</h3>
+          </div>
+        </div>
+        <div class="loc-body">
+          <div class="loc-chips">
+            <span class="chip">🏋️ Gym</span>
+            <span class="chip">🏊 Pool</span>
+            <span class="chip">🧘 Classes</span>
+            <span class="chip">⚽ Astro Pitches</span>
+          </div>
+          <p>A vibrant northside hub with modern equipment and a packed weekly timetable for all fitness levels.</p>
+          <div class="loc-hours"><span class="dot-green"></span> Mon–Fri 7:00am–8:45pm · Sat–Sun 9am–5:45pm</div>
+          <div class="loc-btns">
+            <a href="#" class="btn btn-blue">Get Directions</a>
+            <a href="#join" class="btn btn-outline-ink">Join Here</a>
+          </div>
+        </div>
+      </div>
+
+<div class="loc-card">
+  <div class="loc-photo lp-douglas">
+    <div class="loc-photo-overlay"></div>
+    <div class="loc-photo-label">
+      <small>South Cork</small>
+      <h3>Douglas</h3>
+    </div>
+  </div>
+  <div class="loc-body">
+    <div class="loc-chips">
+      <span class="chip">🏋️ Gym</span>
+      <span class="chip">🏊 Pool</span>
+      <span class="chip">🧘 Classes</span>
+    </div>
+    <p>Serving Cork's southside with a heated pool, modern gym floor, and classes for all ages and abilities.</p>
+    <div class="loc-hours"><span class="dot-green"></span> Mon–Fri 7:00am–8:45pm · Sat–Sun 9am–5:45pm</div>
+    <div class="loc-btns">
+      <a href="#" class="btn btn-blue">Get Directions</a>
+      <a href="#join" class="btn btn-outline-ink">Join Here</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     MEMBERSHIP FEATURES
+     ══════════════════════════════════════════════════════ -->
+<section class="membership" id="membership">
+  <div class="wrap mem-inner">
+
+    <div class="mem-left">
+      <div class="overline">One membership</div>
+      <h2 class="display">Everything included,<br><em>every day.</em></h2>
+      <p>Your LeisureWorld membership gives full access to all three Cork centres — no add-ons, no hidden extras.</p>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon fi-blue">🏋️</div>
+          <div>
+            <h4>Fully equipped gym floors</h4>
+            <p>Modern cardio and strength equipment, free weights, and functional training zones.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon fi-blue">🏊</div>
+          <div>
+            <h4>Swimming pools</h4>
+            <p>25m heated pools for lane swimming, lessons, and aqua fitness classes.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon fi-orange">🧘</div>
+          <div>
+            <h4>Group fitness classes</h4>
+            <p>Revelate, Ageless Movement, Movewell and more</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon fi-stone">👨‍👩‍👧</div>
+          <div>
+            <h4>Family &amp; kids activities</h4>
+            <p>Family Swim and Kids Camps!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mem-right">
+      <div class="mem-card">
+        <div class="mem-card-tag">One membership · All access</div>
+        <h3>Everything included,<br>every day.</h3>
+        <p>Access all three Cork centres and everything inside them.</p>
+        <div class="pills">
+          <span class="pill pill-solid">Gym access</span>
+          <span class="pill pill-solid">Pool access</span>
+          <span class="pill pill-outline">Group classes</span>
+          <span class="pill pill-outline">3 locations</span>
+          <span class="pill pill-outline">Sauna</span>
+          <span class="pill pill-outline">Parking</span>
+        </div>
+        <div class="mem-stats">
+          <div class="mem-stat"><strong>3<em>+</em></strong><span>Cork centres</span></div>
+          <div class="mem-stat"><strong>50<em>+</em></strong><span>Weekly classes</span></div>
+          <div class="mem-stat"><strong>7</strong><span>Days a week</span></div>
+          <div class="mem-stat"><strong>12<em>k</em></strong><span>Members</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     JOIN CTA
+     ══════════════════════════════════════════════════════ -->
+<section class="join-cta" id="join">
+  <div class="wrap join-inner">
+    <div>
+      <div class="overline overline-light">Ready to get started?</div>
+      <h2>Your healthiest life<br>starts <em>today.</em></h2>
+      <p>Join thousands of Cork people who've made LeisureWorld their second home. Flexible memberships, no hidden fees, cancel any time.</p>
+    </div>
+    <div class="join-actions">
+      <a href="#" class="btn btn-white btn-lg">Join Now</a>
+      <a href="#locations" class="btn btn-outline-white btn-lg">View Locations</a>
+      <p class="join-note">No joining fee · Cancel any time</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <!-- Replace logo.png with your actual logo file -->
+        <img src="/Users/nikitajoisa/Desktop/lwm/LW/Images/Logo.png" alt="LeisureWorld Cork"/>
+        <p>Health, fitness, and recreation made accessible for everyone in Cork.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Centres</h4>
+        <ul>
+          <li><a href="#locations">Bishopstown</a></li>
+          <li><a href="#locations">Churchfield</a></li>
+          <li><a href="#locations">Douglas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Activities</h4>
+        <ul>
+          <li><a href="#activities">Gym</a></li>
+          <li><a href="#activities">Swimming</a></li>
+          <li><a href="#membership">Classes</a></li>
+          <li><a href="#activities">Family &amp; Kids</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <ul>
+          <li><a href="#join">Join Now</a></li>
+          <li><a href="#">Corporate</a></li>
+          <li><a href="#">Student</a></li>
+          <li><a href="#">Senior</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 LeisureWorld Cork. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
