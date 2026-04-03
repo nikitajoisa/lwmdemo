@@ -1,2 +1,0 @@
-# lwmdemo
-Side Project
