@@ -1390,6 +1390,12 @@ footer {
   object-fit: contain;
 }
 
+.social-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 .socials a:hover { border-color: var(--pool); color: var(--pool); }
 
 
